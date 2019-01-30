@@ -8,3 +8,8 @@ puts "Welcome to Tic Tac Toe!"
 display_board(board)
 
 # Make sure to execute #play below
+counter = 0
+while counter < 1
+play(board)
+counter += 1
+ end
