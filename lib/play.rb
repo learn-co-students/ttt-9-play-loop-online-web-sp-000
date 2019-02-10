@@ -36,6 +36,7 @@ def turn(board)
 end
 
 # Defines amount of moves
+
 def play(board)
 num_of_moves = 1
 while num_of_moves < 10
