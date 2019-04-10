@@ -36,15 +36,17 @@ def turn(board)
 end
 
 # Define your play method below
+# counts the number of turns, and make sure game ends
+# after all spaces on board have an "X"
 def play(board)
   # while board != ["X", "X", "X", "X", "X", "X", "X", "X", "X"]
   #   turn(board)
   # end
-  
-  i = 0
-  while i < 9
+
+  turn_count = 0
+  while turn_count < 9
     turn(board)
-    i += 1
+    turn_count += 1
   end
   puts "game over"
 end

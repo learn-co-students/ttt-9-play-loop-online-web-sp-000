@@ -10,5 +10,3 @@ display_board(board)
 # Make sure to execute #play below
 # starts a loop and calls #turn
 play(board)
-
-# display_board(board)
