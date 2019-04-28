@@ -1,4 +1,11 @@
 # Helper Methods
+def play(board)
+  gameCount = 0
+  until gameCount == 9
+    turn(board)
+    gameCount += 1
+  end
+end
 def display_board(board)
   puts " #{board[0]} | #{board[1]} | #{board[2]} "
   puts "-----------"
