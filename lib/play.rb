@@ -36,9 +36,9 @@ def turn(board)
 end
 
 def play(board)
-  turn_counter = 0
-  while turn_counter < 9      # while turns are <= to 9
+  turn_counter = 0            #initialize number of turns to count to start at 0 (Therefore we get 9 loops)
+  while turn_counter < 9      #while turns are <= to 9
     turn(board)               #make your turn
-    turn_counter += 1        #add to turn count loop
+    turn_counter += 1         #add to turn count loop
   end
 end
