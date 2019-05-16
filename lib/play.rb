@@ -35,4 +35,10 @@ def turn(board)
   end
 end
 
-# Define your play method below
+def play(board)
+  turn_counter = 0
+  while turn_counter < 9      # while turns are <= to 9
+    turn(board)               #make your turn
+    turn_counter += 1        #add to turn count loop
+  end
+end
