@@ -30,9 +30,19 @@ def turn(board)
   if valid_move?(board, index)
     move(board, index)
     display_board(board)
+    yield
   else
     turn(board)
   end
 end
 
 # Define your play method below
+
+def play(board)
+  counter_board = Array.new
+  until counter_board.length == 9
+    turn(board) {counter_board << 1}
+  end
+end
+    
+  
