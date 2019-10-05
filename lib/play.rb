@@ -1,4 +1,3 @@
-# Helper Methods
 def display_board(board)
   puts " #{board[0]} | #{board[1]} | #{board[2]} "
   puts "-----------"
@@ -30,9 +29,28 @@ def turn(board)
   if valid_move?(board, index)
     move(board, index)
     display_board(board)
+    
   else
     turn(board)
   end
 end
 
 # Define your play method below
+def play(board)
+   player_turns = 0
+  while player_turns < 9
+    
+        turn(board)
+        player_turns += 1
+  end
+end
+
+
+
+
+
+
+
+
+
+
