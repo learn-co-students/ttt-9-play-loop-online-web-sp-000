@@ -36,3 +36,20 @@ def turn(board)
 end
 
 # Define your play method below
+
+def play(board)
+  for i in 1..9 do
+  turn(board)
+  end
+end
+# turn(board)
+#  i = '9'
+#   val == '9'
+#    break
+
+
+#ending of loop
+
+#i = turn(board)
+#for i in 1..9 do
+#turn(board)
