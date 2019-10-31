@@ -1,10 +1,54 @@
 # Helper Methods
 def display_board(board)
-  puts " #{board[0]} | #{board[1]} | #{board[2]} "
-  puts "-----------"
-  puts " #{board[3]} | #{board[4]} | #{board[5]} "
-  puts "-----------"
-  puts " #{board[6]} | #{board[7]} | #{board[8]} "
+  square_size = Math.sqrt(board.size)
+
+  if !(square_size % 1 > 0)
+    n_lines = board.size / square_size
+    row_n = 0
+    rows = board.each_slice(square_size).to_a
+
+    while row_n < square_size
+      space = 0
+      row = rows[row_n]
+
+      write_line(row)
+      if row_n < (square_size - 1)
+        write_hrule(square_size)
+      end
+
+      row_n += 1
+    end
+  end
+end
+
+def write_line(array)
+  place_i = 0
+  while place_i < array.size
+    symbol = array[place_i]
+    if !(symbol == 'X' || symbol == 'O' || symbol == ' ')
+      symbol = ' '
+    end
+    print " #{symbol} "
+    if place_i < (array.size - 1) 
+      print '|'
+    end
+    place_i += 1
+  end
+  puts ''
+end
+
+def write_hrule(spaces)
+  n = (spaces * 4) - 1
+  i = 0
+  while i < n
+    print '-'
+    i += 1
+  end
+  puts ''
+end
+
+def valid_move?(board, index)
+  (!position_taken?(board, index)) && index.between?(0, board.size - 1)
 end
 
 def input_to_index(user_input)
@@ -19,20 +63,14 @@ def position_taken?(board, location)
   board[location] != " " && board[location] != ""
 end
 
-def valid_move?(board, index)
-  index.between?(0,8) && !position_taken?(board, index)
-end
-
 def turn(board)
-  puts "Please enter 1-9:"
-  input = gets.strip
-  index = input_to_index(input)
+  puts 'Please enter 1-9:'
+  index = input_to_index(gets.strip)
   if valid_move?(board, index)
     move(board, index)
     display_board(board)
-  else
+  else 
     turn(board)
   end
 end
-
 # Define your play method below
