@@ -18,6 +18,8 @@ def display_board(board)
 
       row_n += 1
     end
+  else
+    puts '!! the board given is not squared !!'
   end
 end
 
@@ -74,3 +76,11 @@ def turn(board)
   end
 end
 # Define your play method below
+
+def play(board)
+  turns = 0
+  while turns < 9
+    turn(board)
+    turns += 1
+  end
+end
