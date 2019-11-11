@@ -36,3 +36,15 @@ def turn(board)
 end
 
 # Define your play method below
+def play(board)
+  playing = 0 
+  loop do 
+    playing += 1 
+    if playing <= board.length 
+      turn(board)
+    else
+      break
+    end
+  end
+end
+    
