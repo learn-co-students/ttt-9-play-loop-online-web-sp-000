@@ -35,7 +35,7 @@ def turn(board)
   end
 end
 
-# starts a loop and call turn
+# starts a loop and calls turn
 def play(board)
   counter = 0
   until counter == 9
