@@ -36,3 +36,14 @@ def turn(board)
 end
 
 # Define your play method below
+
+def play(board)
+  counter = 1
+  loop do 
+    counter += 1
+    turn(board)
+    if counter == 10
+      break 
+    end 
+  end 
+end 
