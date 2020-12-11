@@ -34,5 +34,41 @@ def turn(board)
     turn(board)
   end
 end
-
 # Define your play method below
+def play(board)
+  counter = 0
+  until counter == 9
+  turn(board)
+  counter += 1
+  end
+end
+
+def full?(board)
+  if board.any? {|index| index == nil || index == " "}
+    return false
+  else
+    return true
+  end
+end
+
+def over?(board)
+  if full?(board) 
+    return true
+  else
+    return false
+  end
+end
+
+def play(board)
+  counter = 0
+  until counter == 9
+  turn(board)
+  counter += 1
+  end
+end
+
+def play(board)
+  until over?(board)
+    turn(board) 
+  end
+end
