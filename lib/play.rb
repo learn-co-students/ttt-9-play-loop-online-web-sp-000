@@ -36,3 +36,15 @@ def turn(board)
 end
 
 # Define your play method below
+def play(board)
+  #Start a loop and call #turn
+#until position_taken?(board, location) == true
+#end
+turn_count = 0
+  while turn_count < 9
+    turn(board)
+    turn_count = turn_count + 1
+  end
+
+end
+#end
