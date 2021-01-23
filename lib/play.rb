@@ -1,3 +1,4 @@
+
 # Helper Methods
 def display_board(board)
   puts " #{board[0]} | #{board[1]} | #{board[2]} "
@@ -16,7 +17,7 @@ def move(board, index, current_player = "X")
 end
 
 def position_taken?(board, location)
-  board[location] != " " && board[location] != ""
+  board[location] != " " && board[location] != "" && board[location] != nil
 end
 
 def valid_move?(board, index)
@@ -28,7 +29,7 @@ def turn(board)
   input = gets.strip
   index = input_to_index(input)
   if valid_move?(board, index)
-    move(board, index)
+    move(board, index, "X")
     display_board(board)
   else
     turn(board)
@@ -36,3 +37,12 @@ def turn(board)
 end
 
 # Define your play method below
+
+def play(board)
+  i = 0
+ if i < 9 
+   turn(board)
+   i = i + 1 
+  end 
+end
+
