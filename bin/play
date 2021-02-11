@@ -10,4 +10,9 @@ display_board(board)
 # Make sure to execute #play below
 
 def play(board)
+  index = 0
+  until index == 9
+    index += 1
+    turn(board)
+  end
 end
