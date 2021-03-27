@@ -23,6 +23,7 @@ def valid_move?(board, index)
   index.between?(0,8) && !position_taken?(board, index)
 end
 
+#Ask user for input, store and validate input, update and display board
 def turn(board)
   puts "Please enter 1-9:"
   input = gets.strip
@@ -35,4 +36,9 @@ def turn(board)
   end
 end
 
-# Define your play method below
+#Call "turn" method until there are no more playable moves
+def play(board)
+  while board.include?(" ")
+    turn(board)
+  end
+end
