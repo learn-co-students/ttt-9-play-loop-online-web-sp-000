@@ -35,4 +35,11 @@ def turn(board)
   end
 end
 
-# Define your play method below
+# Define your play method below - This limits the game to a maximum of 9 turns, there is currently no win state to check yet.
+def play(board)
+  count = 0
+  while count < 9
+    turn(board)
+    count += 1
+  end
+end
