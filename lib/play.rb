@@ -20,7 +20,11 @@ def position_taken?(board, location)
 end
 
 def valid_move?(board, index)
-  index.between?(0,8) && !position_taken?(board, index)
+  if  index.between?(0,8) && !position_taken?(board, index)
+    return true
+  else
+  puts"invalid move try again"
+  end
 end
 
 def turn(board)
@@ -31,6 +35,15 @@ def turn(board)
     move(board, index)
     display_board(board)
   else
+    turn(board)
+  end
+end
+
+
+def play(board)
+  counter = 0
+  until counter == 9
+    counter +=1
     turn(board)
   end
 end
