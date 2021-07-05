@@ -31,8 +31,20 @@ def turn(board)
     move(board, index)
     display_board(board)
   else
+    puts "Invalid Entry,  try again"
     turn(board)
   end
 end
 
 # Define your play method below
+
+def play(board)
+  counter = 0
+until counter == 9
+    counter += 1
+    turn(board)
+    if counter >= 9
+      puts "Only 9 turns allowed!"
+    end
+  end
+end
