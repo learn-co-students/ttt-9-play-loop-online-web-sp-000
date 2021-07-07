@@ -31,8 +31,15 @@ def turn(board)
     move(board, index)
     display_board(board)
   else
+    puts "Not a valid move! try again!"
     turn(board)
   end
 end
 
 # Define your play method below
+def play(board)
+  while board.include?(" ")
+    puts "In while"
+    turn(board)
+  end
+end
